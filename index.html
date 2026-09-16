@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Page & Live Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for sleek icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated background mesh -->
+    <div class="background-ambient">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="brand">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Available</span>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="clock-format-btn" class="icon-btn" title="Toggle 12h/24h Format">
+                    <span id="format-label">24H</span>
+                </button>
+                <button id="theme-toggle-btn" class="icon-btn" title="Switch Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Hero Showcase -->
+        <section class="hero-card glass-card">
+            <div class="greeting-box">
+                <span id="greeting-text" class="greeting-badge">Good Morning</span>
+                <div class="name-wrapper">
+                    <h1 id="user-name-display" class="user-name" title="Click to edit name">Alex Morgan</h1>
+                    <button id="edit-name-btn" class="edit-btn" aria-label="Edit Name">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </div>
+                <div id="name-input-container" class="name-input-container hidden">
+                    <input type="text" id="name-input" class="name-input" placeholder="Enter your name..." maxlength="30">
+                    <button id="save-name-btn" class="btn btn-primary">Save</button>
+                    <button id="cancel-name-btn" class="btn btn-secondary">Cancel</button>
+                </div>
+                <p class="subtitle">Welcome back to your personalized space</p>
+            </div>
+
+            <!-- Live Clock & Date Widget -->
+            <div class="clock-showcase">
+                <div class="time-display">
+                    <span id="clock-hours">10</span>
+                    <span class="clock-colon">:</span>
+                    <span id="clock-minutes">13</span>
+                    <span class="clock-colon">:</span>
+                    <span id="clock-seconds">35</span>
+                    <span id="clock-ampm" class="ampm-tag hidden">AM</span>
+                </div>
+                <div class="date-display">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span id="date-text">Wednesday, September 16, 2026</span>
+                </div>
+                <div class="timezone-badge">
+                    <i class="fa-solid fa-earth-asia"></i>
+                    <span id="timezone-text">UTC+08:00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Grid Section -->
+        <section class="widgets-grid">
+            <!-- Focus Goal Widget -->
+            <div class="widget-card glass-card">
+                <div class="widget-header">
+                    <h3><i class="fa-solid fa-bullseye accent-icon"></i> Focus of the Day</h3>
+                    <button id="edit-goal-btn" class="icon-subtle-btn" title="Edit goal"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+                <div class="goal-content">
+                    <p id="goal-display" class="goal-text">Build awesome things and stay inspired ✨</p>
+                    <div id="goal-input-container" class="goal-input-container hidden">
+                        <input type="text" id="goal-input" class="widget-input" placeholder="What is your focus today?">
+                        <div class="widget-actions">
+                            <button id="save-goal-btn" class="btn btn-small btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Links -->
+            <div class="widget-card glass-card">
+                <div class="widget-header">
+                    <h3><i class="fa-solid fa-compass accent-icon"></i> Quick Navigation</h3>
+                </div>
+                <div class="quick-links">
+                    <a href="https://github.com" target="_blank" class="link-item">
+                        <div class="link-icon"><i class="fa-brands fa-github"></i></div>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://google.com" target="_blank" class="link-item">
+                        <div class="link-icon"><i class="fa-brands fa-google"></i></div>
+                        <span>Search</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="link-item">
+                        <div class="link-icon"><i class="fa-brands fa-linkedin"></i></div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="link-item">
+                        <div class="link-icon"><i class="fa-brands fa-youtube"></i></div>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Time Stats Widget -->
+            <div class="widget-card glass-card">
+                <div class="widget-header">
+                    <h3><i class="fa-solid fa-hourglass-half accent-icon"></i> Day Progress</h3>
+                </div>
+                <div class="progress-widget">
+                    <div class="progress-bar-container">
+                        <div id="day-progress-bar" class="progress-bar-fill" style="width: 42%;"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span id="day-progress-percent">42% completed</span>
+                        <span id="time-remaining-text">13h 46m remaining</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Designed with precision &bull; <span id="footer-year">2026</span></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
