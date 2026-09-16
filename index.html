@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page & Live Dashboard</title>
+    <title>陳宏郁 (Alex Chen) | Personal Page & Dashboard</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for sleek icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Animated background mesh -->
+    <!-- Animated background ambient mesh -->
     <div class="background-ambient">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -26,7 +30,7 @@
             <div class="brand">
                 <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span class="status-text">Available</span>
+                    <span class="status-text">Available for Hire</span>
                 </div>
             </div>
             <div class="header-controls">
@@ -39,22 +43,30 @@
             </div>
         </header>
 
-        <!-- Main Hero Showcase -->
+        <!-- Main Hero & Profile Section -->
         <section class="hero-card glass-card">
-            <div class="greeting-box">
-                <span id="greeting-text" class="greeting-badge">Good Morning</span>
-                <div class="name-wrapper">
-                    <h1 id="user-name-display" class="user-name" title="Click to edit name">Alex Morgan</h1>
-                    <button id="edit-name-btn" class="edit-btn" aria-label="Edit Name">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-code"></i>
                 </div>
-                <div id="name-input-container" class="name-input-container hidden">
-                    <input type="text" id="name-input" class="name-input" placeholder="Enter your name..." maxlength="30">
-                    <button id="save-name-btn" class="btn btn-primary">Save</button>
-                    <button id="cancel-name-btn" class="btn btn-secondary">Cancel</button>
+                <div class="greeting-box">
+                    <span id="greeting-text" class="greeting-badge">Good Morning</span>
+                    <div class="name-wrapper">
+                        <h1 id="user-name-display" class="user-name" title="Click to edit name">陳宏郁</h1>
+                        <button id="edit-name-btn" class="edit-btn" aria-label="Edit Name">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
+                    <div id="name-input-container" class="name-input-container hidden">
+                        <input type="text" id="name-input" class="name-input" placeholder="Enter your name..."
+                            maxlength="30">
+                        <button id="save-name-btn" class="btn btn-primary">Save</button>
+                        <button id="cancel-name-btn" class="btn btn-secondary">Cancel</button>
+                    </div>
+                    <p class="profile-title"><i class="fa-solid fa-laptop-code"></i> Full Stack Web Developer & UI
+                        Designer</p>
+                    <p class="subtitle">Building elegant web applications with modern interactive experiences.</p>
                 </div>
-                <p class="subtitle">Welcome back to your personalized space</p>
             </div>
 
             <!-- Live Clock & Date Widget -->
@@ -62,9 +74,9 @@
                 <div class="time-display">
                     <span id="clock-hours">10</span>
                     <span class="clock-colon">:</span>
-                    <span id="clock-minutes">13</span>
+                    <span id="clock-minutes">44</span>
                     <span class="clock-colon">:</span>
-                    <span id="clock-seconds">35</span>
+                    <span id="clock-seconds">58</span>
                     <span id="clock-ampm" class="ampm-tag hidden">AM</span>
                 </div>
                 <div class="date-display">
@@ -78,13 +90,114 @@
             </div>
         </section>
 
-        <!-- Dynamic Grid Section -->
+        <!-- Skills & Expertise Section -->
+        <section class="section-container glass-card">
+            <div class="section-title">
+                <h2><i class="fa-solid fa-wand-magic-sparkles accent-icon"></i> My Skills & Tech Stack</h2>
+                <span class="badge">5 Core Skills</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon js"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill-info">
+                        <h4>JavaScript (ES6+)</h4>
+                        <p>Async/Await, DOM Manipulation, Modules</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon html"><i class="fa-brands fa-html5"></i></div>
+                    <div class="skill-info">
+                        <h4>HTML5 & Semantic Web</h4>
+                        <p>Accessibility, SEO Best Practices</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon css"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="skill-info">
+                        <h4>CSS3 & Glassmorphism</h4>
+                        <p>Flexbox, Grid, CSS Variables, Animations</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon react"><i class="fa-brands fa-react"></i></div>
+                    <div class="skill-info">
+                        <h4>React & Web Frameworks</h4>
+                        <p>Component Architecture, State Management</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon git"><i class="fa-brands fa-git-alt"></i></div>
+                    <div class="skill-info">
+                        <h4>Git & GitHub Deployment</h4>
+                        <p>Version Control, CI/CD, GitHub Pages</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="section-container glass-card">
+            <div class="section-title">
+                <h2><i class="fa-solid fa-rocket accent-icon"></i> Featured Projects</h2>
+                <span class="badge">Portfolio</span>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag">Web App</span>
+                        <h3>Personal Page & Live Dashboard</h3>
+                    </div>
+                    <p class="project-desc">A glassmorphic personal dashboard featuring a real-time JavaScript clock,
+                        theme switcher, customizable name/goals, and responsive design system.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>CSS3</span>
+                        <span>HTML5</span>
+                        <span>GitHub Pages</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/a9110118888/0916-personal-page" target="_blank"
+                            class="btn btn-small btn-secondary">
+                            <i class="fa-brands fa-github"></i> Source Code
+                        </a>
+                        <a href="https://a9110118888.github.io/0916-personal-page/" target="_blank"
+                            class="btn btn-small btn-primary">
+                            <i class="fa-solid fa-up-right-from-square"></i> Live Site
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag">Front-End</span>
+                        <h3>Interactive Web Portfolio</h3>
+                    </div>
+                    <p class="project-desc">Modern portfolio showcase presenting web development projects, interactive
+                        micro-animations, and full-stack architecture.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>CSS Variables</span>
+                        <span>UI/UX</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/a9110118888" target="_blank" class="btn btn-small btn-secondary">
+                            <i class="fa-brands fa-github"></i> Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Grid Section (Focus & Widgets) -->
         <section class="widgets-grid">
             <!-- Focus Goal Widget -->
             <div class="widget-card glass-card">
                 <div class="widget-header">
                     <h3><i class="fa-solid fa-bullseye accent-icon"></i> Focus of the Day</h3>
-                    <button id="edit-goal-btn" class="icon-subtle-btn" title="Edit goal"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button id="edit-goal-btn" class="icon-subtle-btn" title="Edit goal"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
                 </div>
                 <div class="goal-content">
                     <p id="goal-display" class="goal-text">Build awesome things and stay inspired ✨</p>
@@ -103,7 +216,7 @@
                     <h3><i class="fa-solid fa-compass accent-icon"></i> Quick Navigation</h3>
                 </div>
                 <div class="quick-links">
-                    <a href="https://github.com" target="_blank" class="link-item">
+                    <a href="https://github.com/a9110118888" target="_blank" class="link-item">
                         <div class="link-icon"><i class="fa-brands fa-github"></i></div>
                         <span>GitHub</span>
                     </a>
@@ -129,11 +242,11 @@
                 </div>
                 <div class="progress-widget">
                     <div class="progress-bar-container">
-                        <div id="day-progress-bar" class="progress-bar-fill" style="width: 42%;"></div>
+                        <div id="day-progress-bar" class="progress-bar-fill" style="width: 44.8%;"></div>
                     </div>
                     <div class="progress-labels">
-                        <span id="day-progress-percent">42% completed</span>
-                        <span id="time-remaining-text">13h 46m remaining</span>
+                        <span id="day-progress-percent">44.8% completed</span>
+                        <span id="time-remaining-text">13h 15m remaining</span>
                     </div>
                 </div>
             </div>
@@ -141,10 +254,11 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>Designed with precision &bull; <span id="footer-year">2026</span></p>
+            <p>Designed with precision by <strong>陳宏郁</strong> &bull; <span id="footer-year">2026</span></p>
         </footer>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
