@@ -1,43 +1,36 @@
-# Personal Page & Real-Time Dashboard 🌟
+# 昭和レトロ・個人ポートフォリオ (Japanese Retro Dashboard) 🎌
 
-![Personal Page Demo](demo.png)
+![Japanese Retro Demo](demo.png)
 
-A modern, high-aesthetic personal landing page built with HTML5, CSS3 glassmorphism design, and vanilla JavaScript. Features a live real-time clock, customizable user name, day progress tracker, focus goal widget, and theme switcher.
+A high-aesthetic Japanese Retro / Showa City Pop (昭和レトロ・City Pop) personal page & live real-time dashboard built with HTML5, CSS3, and JavaScript.
 
 ## 🚀 Features
 
-- ⏰ **Live Real-Time Clock**: Precise ticking clock with hours, minutes, and seconds.
-- 🔄 **12H / 24H Toggle**: Seamlessly switch between 12-hour (with AM/PM) and 24-hour formats.
-- 📅 **Calendar & Timezone**: Displays formatted date and local UTC timezone offset.
-- 🌅 **Dynamic Greeting**: Time-aware greeting (Good Morning, Afternoon, Evening, Night).
+- 🏮 **Japanese Retro & Hanko Stamp Aesthetic**: Traditional Japanese Hanko seal stamps (朱印 / 印鑑 "陳" and "営業中"), Mincho typography (`Shippori Mincho`), and vintage paper grid texture.
+- 📺 **CRT Scanline Overlay**: Toggleable TV CRT scanlines effect for authentic retro visual texture.
+- ⏰ **Live Japanese Real-Time Clock**: Ticking digital clock (`HH:MM:SS`), Japanese date notation (`2026年 9月 16日 (水)`), timezone offset, and 12H/24H format toggle.
+- 🌅 **Time-Aware Japanese Greetings**: Dynamic Japanese greetings (`おはようございます`, `こんにちは`, `こんばんは`, `おやすみなさい`).
 - ✏️ **Customizable Name & Goal**: Click to edit your name and daily focus goal with automatic `localStorage` saving.
-- 🎨 **Glassmorphism Aesthetics**: Animated ambient glowing background blobs, sleek typography (Outfit & Plus Jakarta Sans), and 3 distinct color themes (Dark, Glass Light, Cyber Neon).
-- ⏳ **Day Progress Bar**: Live progress tracking percentage of the day completed.
+- 🎨 **3 Showa Color Themes**:
+  - 📜 **和紙 (Showa Paper)**: Ochre washi paper texture with vermilion red (`#c83726`) & deep indigo accents.
+  - 🌃 **CityPop (80s City Pop)**: Midnight neon Synthwave aesthetic.
+  - 🌙 **昭和夜 (Showa Dark)**: Vintage dark room aesthetic.
+- 🛠️ **Skills & Projects Showcase**: 5 skill badges and featured project cards with direct GitHub & Live Pages deployment links.
 
 ## 📁 Project Structure
 
 ```
 .
-├── demo.png       # Preview screenshot
-├── index.html     # Semantic HTML layout
-├── styles.css     # CSS custom properties, glassmorphism styles, and themes
-└── script.js      # Real-time clock engine, local storage management, and interactive widgets
+├── demo.png       # Japanese Retro showcase screenshot
+├── index.html     # Japanese Retro HTML structure & Hanko stamps
+├── styles.css     # Showa paper palette, CRT scanline overlay, typography
+└── script.js      # Japanese date engine, real-time clock, CRT toggle, themes
 ```
 
-## 🛠️ How to Run Locally
+## 🌐 Live Website
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/a9110118888/0916-personal-page.git
-   cd 0916-personal-page
-   ```
-
-2. Open `index.html` in your browser:
-   - Double-click `index.html`
-   - Or start a local server:
-     ```bash
-     npx serve .
-     ```
+- **Live Site (GitHub Pages)**: [https://a9110118888.github.io/0916-personal-page/](https://a9110118888.github.io/0916-personal-page/)
+- **GitHub Repository**: [https://github.com/a9110118888/0916-personal-page](https://github.com/a9110118888/0916-personal-page)
 
 ## 📜 License
 
