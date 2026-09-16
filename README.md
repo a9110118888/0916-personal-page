@@ -1,5 +1,7 @@
 # Personal Page & Real-Time Dashboard 🌟
 
+![Personal Page Demo](demo.png)
+
 A modern, high-aesthetic personal landing page built with HTML5, CSS3 glassmorphism design, and vanilla JavaScript. Features a live real-time clock, customizable user name, day progress tracker, focus goal widget, and theme switcher.
 
 ## 🚀 Features
@@ -16,6 +18,7 @@ A modern, high-aesthetic personal landing page built with HTML5, CSS3 glassmorph
 
 ```
 .
+├── demo.png       # Preview screenshot
 ├── index.html     # Semantic HTML layout
 ├── styles.css     # CSS custom properties, glassmorphism styles, and themes
 └── script.js      # Real-time clock engine, local storage management, and interactive widgets
