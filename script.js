@@ -1,4 +1,4 @@
-// Personal Page Interactive Engine
+// Japanese Retro Personal Page Interactive Engine
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateText = document.getElementById('date-text');
     const timezoneText = document.getElementById('timezone-text');
 
+    const crtOverlay = document.getElementById('crt-overlay');
+    const crtToggleBtn = document.getElementById('crt-toggle-btn');
+    const crtLabel = document.getElementById('crt-label');
+
     const greetingText = document.getElementById('greeting-text');
     const userNameDisplay = document.getElementById('user-name-display');
     const editNameBtn = document.getElementById('edit-name-btn');
@@ -20,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelNameBtn = document.getElementById('cancel-name-btn');
 
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeLabel = document.getElementById('theme-label');
 
     const goalDisplay = document.getElementById('goal-display');
     const editGoalBtn = document.getElementById('edit-goal-btn');
@@ -34,10 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // State Variables
     let is24HourFormat = true;
-    const themes = ['dark', 'light', 'neon'];
+    let isCrtEnabled = true;
+    const themes = [
+        { id: 'showa-paper', label: '和紙' },
+        { id: 'city-pop', label: 'CityPop' },
+        { id: 'showa-dark', label: '昭和夜' }
+    ];
     let currentThemeIndex = 0;
 
-    // --- 1. User Name & Goal Initialization ---
+    // --- 1. User Preferences Initialization ---
     function initUserPreferences() {
         const savedName = localStorage.getItem('personal_user_name');
         if (savedName) {
@@ -55,22 +65,25 @@ document.addEventListener('DOMContentLoaded', () => {
             formatLabel.textContent = is24HourFormat ? '24H' : '12H';
         }
 
-        const savedTheme = localStorage.getItem('personal_theme');
-        if (savedTheme && themes.includes(savedTheme)) {
-            currentThemeIndex = themes.indexOf(savedTheme);
-            setTheme(savedTheme);
+        const savedTheme = localStorage.getItem('personal_retro_theme');
+        if (savedTheme) {
+            const foundIndex = themes.findIndex(t => t.id === savedTheme);
+            if (foundIndex !== -1) {
+                currentThemeIndex = foundIndex;
+                setTheme(themes[currentThemeIndex]);
+            }
         }
     }
 
-    // --- 2. Live Clock & Date Engine ---
+    // --- 2. Live Clock & Japanese Date Engine ---
     function updateClock() {
         const now = new Date();
         let hours = now.getHours();
         const minutes = now.getMinutes();
         const seconds = now.getSeconds();
 
-        // Dynamic Greeting based on current hour
-        updateGreeting(hours);
+        // Japanese Greeting based on hour
+        updateJapaneseGreeting(hours);
 
         // Formatting AM/PM & 12h
         if (!is24HourFormat) {
@@ -86,24 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
         clockMinutes.textContent = String(minutes).padStart(2, '0');
         clockSeconds.textContent = String(seconds).padStart(2, '0');
 
-        // Date Display
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        dateText.textContent = now.toLocaleDateString('en-US', options);
+        // Japanese Date Format: 2026年 9月 16日 (水)
+        const daysJP = ['日', '月', '火', '水', '木', '金', '土'];
+        const dayKanji = daysJP[now.getDay()];
+        dateText.textContent = `${now.getFullYear()}年 ${now.getMonth() + 1}月 ${now.getDate()}日 (${dayKanji})`;
 
         // Day Progress Calculation
         updateDayProgress(now);
     }
 
-    function updateGreeting(hours) {
-        let greeting = 'Good Day';
-        if (hours >= 5 && hours < 12) {
-            greeting = 'Good Morning';
-        } else if (hours >= 12 && hours < 18) {
-            greeting = 'Good Afternoon';
-        } else if (hours >= 18 && hours < 22) {
-            greeting = 'Good Evening';
+    function updateJapaneseGreeting(hours) {
+        let greeting = 'こんにちは';
+        if (hours >= 5 && hours < 11) {
+            greeting = 'おはようございます';
+        } else if (hours >= 11 && hours < 17) {
+            greeting = 'こんにちは';
+        } else if (hours >= 17 && hours < 22) {
+            greeting = 'こんばんは';
         } else {
-            greeting = 'Good Night';
+            greeting = 'おやすみなさい';
         }
         greetingText.textContent = greeting;
     }
@@ -114,29 +128,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const percent = ((currentSeconds / totalSecondsInDay) * 100).toFixed(1);
 
         dayProgressBar.style.width = `${percent}%`;
-        dayProgressPercent.textContent = `${percent}% completed`;
+        dayProgressPercent.textContent = `${percent}% 経過`;
 
         const remainingSeconds = totalSecondsInDay - currentSeconds;
         const remainingHours = Math.floor(remainingSeconds / 3600);
         const remainingMins = Math.floor((remainingSeconds % 3600) / 60);
-        timeRemainingText.textContent = `${remainingHours}h ${remainingMins}m remaining`;
+        timeRemainingText.textContent = `残り ${remainingHours}時間${remainingMins}分`;
     }
 
-    // Timezone string
     function initTimezone() {
         try {
             const offsetMinutes = new Date().getTimezoneOffset();
             const offsetHours = Math.abs(Math.floor(offsetMinutes / 60));
             const sign = offsetMinutes <= 0 ? '+' : '-';
             const padHours = String(offsetHours).padStart(2, '0');
-            timezoneText.textContent = `UTC${sign}${padHours}:00`;
+            timezoneText.textContent = `東京・台北標準時 (UTC${sign}${padHours}:00)`;
         } catch (e) {
-            timezoneText.textContent = 'UTC+08:00';
+            timezoneText.textContent = '東京・台北標準時 (UTC+08:00)';
         }
         footerYear.textContent = new Date().getFullYear();
     }
 
-    // --- 3. Name Edit Engine ---
+    // --- 3. Name & Goal Editors ---
     function openNameEditor() {
         nameInput.value = userNameDisplay.textContent;
         userNameDisplay.classList.add('hidden');
@@ -156,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         editNameBtn.classList.remove('hidden');
     }
 
-    // --- 4. Goal Edit Engine ---
     function openGoalEditor() {
         goalInput.value = goalDisplay.textContent;
         goalDisplay.classList.add('hidden');
@@ -176,20 +188,22 @@ document.addEventListener('DOMContentLoaded', () => {
         editGoalBtn.classList.remove('hidden');
     }
 
-    // --- 5. Theme Switching Engine ---
-    function setTheme(themeName) {
-        document.documentElement.setAttribute('data-theme', themeName);
-        localStorage.setItem('personal_theme', themeName);
-
-        // Update icon based on theme
-        const icon = themeToggleBtn.querySelector('i');
-        if (themeName === 'dark') {
-            icon.className = 'fa-solid fa-moon';
-        } else if (themeName === 'light') {
-            icon.className = 'fa-solid fa-sun';
-        } else if (themeName === 'neon') {
-            icon.className = 'fa-solid fa-bolt';
+    // --- 4. CRT & Theme Switchers ---
+    function toggleCRT() {
+        isCrtEnabled = !isCrtEnabled;
+        if (isCrtEnabled) {
+            crtOverlay.classList.remove('disabled');
+            crtLabel.textContent = 'CRT ON';
+        } else {
+            crtOverlay.classList.add('disabled');
+            crtLabel.textContent = 'CRT OFF';
         }
+    }
+
+    function setTheme(themeObj) {
+        document.documentElement.setAttribute('data-theme', themeObj.id);
+        themeLabel.textContent = themeObj.label;
+        localStorage.setItem('personal_retro_theme', themeObj.id);
     }
 
     function toggleTheme() {
@@ -198,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Event Listeners ---
+    crtToggleBtn.addEventListener('click', toggleCRT);
     clockFormatBtn.addEventListener('click', () => {
         is24HourFormat = !is24HourFormat;
         formatLabel.textContent = is24HourFormat ? '24H' : '12H';
