@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja" data-theme="showa-paper">
+<html lang="zh-Hant" data-theme="showa-paper">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳宏郁 (Alex Chen) | 昭和レトロ・個人ポートフォリオ</title>
+    <title>陳宏郁 (Alex Chen) | 昭和復古個人網頁</title>
     <!-- Google Fonts for Japanese Retro Aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,17 +30,17 @@
         <!-- Top Navigation Bar (Retro Badge Style) -->
         <header class="top-nav">
             <div class="brand">
-                <div class="hanko-seal status-seal" title="Status: Operating">営業中</div>
-                <span class="retro-subtag">昭和レトロ・ウェブ開発</span>
+                <div class="hanko-seal status-seal" title="狀態：營業中">營業中</div>
+                <span class="retro-subtag">昭和復古 • 網頁開發</span>
             </div>
             <div class="header-controls">
-                <button id="crt-toggle-btn" class="retro-btn" title="Toggle CRT Scanline Effect">
+                <button id="crt-toggle-btn" class="retro-btn" title="切換 CRT 電視掃描線濾鏡">
                     <i class="fa-solid fa-tv"></i> <span id="crt-label">CRT ON</span>
                 </button>
-                <button id="clock-format-btn" class="retro-btn" title="Toggle 12h/24h Format">
+                <button id="clock-format-btn" class="retro-btn" title="切換 12小時/24小時 制">
                     <span id="format-label">24H</span>
                 </button>
-                <button id="theme-toggle-btn" class="retro-btn" title="Switch Theme">
+                <button id="theme-toggle-btn" class="retro-btn" title="切換風格主題">
                     <i class="fa-solid fa-palette"></i> <span id="theme-label">和紙</span>
                 </button>
             </div>
@@ -54,25 +54,25 @@
             </div>
 
             <div class="greeting-box">
-                <span id="greeting-text" class="retro-badge">おはようございます</span>
+                <span id="greeting-text" class="retro-badge">早安，歡迎回來</span>
                 <div class="name-wrapper">
-                    <h1 id="user-name-display" class="user-name" title="クリックで名前を編集">陳宏郁</h1>
+                    <h1 id="user-name-display" class="user-name" title="點擊編輯姓名">陳宏郁</h1>
                     <button id="edit-name-btn" class="edit-btn" aria-label="Edit Name">
                         <i class="fa-solid fa-pen-nib"></i>
                     </button>
                 </div>
                 <div id="name-input-container" class="name-input-container hidden">
-                    <input type="text" id="name-input" class="name-input" placeholder="名前を入力..." maxlength="30">
+                    <input type="text" id="name-input" class="name-input" placeholder="請輸入姓名..." maxlength="30">
                     <button id="save-name-btn" class="btn btn-primary">保存</button>
                     <button id="cancel-name-btn" class="btn btn-secondary">取消</button>
                 </div>
-                <p class="profile-title"><i class="fa-solid fa-torii-gate"></i> ウェブ開発者 & UIデザイナー</p>
-                <p class="subtitle">昭和レトロと現代テクノロジーの融合 | Japanese Retro Digital Space</p>
+                <p class="profile-title"><i class="fa-solid fa-torii-gate"></i> 全棧網頁開發者 & UI 設計師</p>
+                <p class="subtitle">昭和復古美學與現代網頁技術的融合 | Japanese Retro Digital Space</p>
             </div>
 
             <!-- Live Clock & Date Widget (Retro Nixie / Digital Display) -->
             <div class="clock-showcase">
-                <div class="clock-label-tag">現在時刻 | CURRENT TIME</div>
+                <div class="clock-label-tag">目前時間 | CURRENT TIME</div>
                 <div class="time-display">
                     <span id="clock-hours">10</span>
                     <span class="clock-colon">:</span>
@@ -83,11 +83,11 @@
                 </div>
                 <div class="date-display">
                     <i class="fa-regular fa-calendar-check"></i>
-                    <span id="date-text">2026年 9月 16日 (水)</span>
+                    <span id="date-text">2026年 9月 16日 星期三</span>
                 </div>
                 <div class="timezone-badge">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span id="timezone-text">東京・台北標準時 (UTC+08:00)</span>
+                    <span id="timezone-text">台北・東京標準時 (UTC+08:00)</span>
                 </div>
             </div>
         </section>
@@ -95,43 +95,43 @@
         <!-- Skills & Expertise Section -->
         <section class="section-container retro-card">
             <div class="section-title">
-                <h2><span class="kanji-accent">技能</span> | MY SKILLS & TECH STACK</h2>
-                <span class="retro-tag-badge">5大スキル</span>
+                <h2><span class="kanji-accent">技能</span> | 專業技能與技術棧</h2>
+                <span class="retro-tag-badge">5大核心技能</span>
             </div>
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon js"><i class="fa-brands fa-js"></i></div>
                     <div class="skill-info">
                         <h4>JavaScript (ES6+)</h4>
-                        <p>非同期処理 / DOM操作 / モジュール</p>
+                        <p>異步處理 / DOM 操作 / 模組化</p>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon html"><i class="fa-brands fa-html5"></i></div>
                     <div class="skill-info">
-                        <h4>HTML5 & Web標準</h4>
-                        <p>アクセシビリティ / セマンティック</p>
+                        <h4>HTML5 & Web 標準</h4>
+                        <p>無障礙設計 / 語意化 / SEO 最佳化</p>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon css"><i class="fa-brands fa-css3-alt"></i></div>
                     <div class="skill-info">
-                        <h4>CSS3 レトロデザイン</h4>
-                        <p>レトロ配色 / CSS変数 / アニメーション</p>
+                        <h4>CSS3 復古美學</h4>
+                        <p>復古配色 / CSS 變數 / 動態動畫</p>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon react"><i class="fa-brands fa-react"></i></div>
                     <div class="skill-info">
-                        <h4>React & Webフレームワーク</h4>
-                        <p>コンポーネント設計 / 状態管理</p>
+                        <h4>React & 前端框架</h4>
+                        <p>組件化架構 / 狀態管理 / 響應式</p>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon git"><i class="fa-brands fa-git-alt"></i></div>
                     <div class="skill-info">
-                        <h4>Git & GitHub Deployment</h4>
-                        <p>バージョン管理 / GitHub Pagesデプロイ</p>
+                        <h4>Git & GitHub 部署</h4>
+                        <p>版本控制 / GitHub Pages 自動部署</p>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
         <!-- Projects Showcase Section -->
         <section class="section-container retro-card">
             <div class="section-title">
-                <h2><span class="kanji-accent">実績</span> | FEATURED PROJECTS</h2>
+                <h2><span class="kanji-accent">專案</span> | 精選作品集</h2>
                 <span class="retro-tag-badge">作品集</span>
             </div>
             <div class="projects-grid">
@@ -148,9 +148,9 @@
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-tag">WEB APP</span>
-                        <h3>昭和レトロ個人ページ & リアルタイム時計</h3>
+                        <h3>昭和復古個人網頁 & 即時時鐘</h3>
                     </div>
-                    <p class="project-desc">昭和レトロ・City Popデザインを採用した個人ポータル。JavaScriptリアルタイム時計、和風カラーテーマ、名前編集機能を搭載。</p>
+                    <p class="project-desc">採用昭和復古與 City Pop 設計語言的個人門戶網站。包含 JavaScript 即時動態時鐘、和風色彩切換與姓名編輯功能。</p>
                     <div class="project-tech">
                         <span>JavaScript</span>
                         <span>CSS3</span>
@@ -160,11 +160,11 @@
                     <div class="project-links">
                         <a href="https://github.com/a9110118888/0916-personal-page" target="_blank"
                             class="btn btn-small btn-secondary">
-                            <i class="fa-brands fa-github"></i> ソースコード
+                            <i class="fa-brands fa-github"></i> 原始碼
                         </a>
                         <a href="https://a9110118888.github.io/0916-personal-page/" target="_blank"
                             class="btn btn-small btn-primary">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 実機デモ
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 線上展示
                         </a>
                     </div>
                 </div>
@@ -173,9 +173,9 @@
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-tag">FRONT-END</span>
-                        <h3>レトロインタラクティブ・ポートフォリオ</h3>
+                        <h3>復古互動式作品集展示</h3>
                     </div>
-                    <p class="project-desc">和モダンとデジタルレトロの美学を融合したインタラクティブ作品集。多様なテーマ切替とレスポンシブレイアウト。</p>
+                    <p class="project-desc">融合和風現代與數位復古美學的互動作品集。具備多款主題切換與響應式版型。</p>
                     <div class="project-tech">
                         <span>JavaScript</span>
                         <span>CSS Variables</span>
@@ -183,7 +183,7 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/a9110118888" target="_blank" class="btn btn-small btn-secondary">
-                            <i class="fa-brands fa-github"></i> プロフィール
+                            <i class="fa-brands fa-github"></i> 個人主頁
                         </a>
                     </div>
                 </div>
@@ -195,14 +195,14 @@
             <!-- Focus Goal Widget -->
             <div class="widget-card retro-card">
                 <div class="widget-header">
-                    <h3><i class="fa-solid fa-bullseye accent-icon"></i> 本日の目標 | DAILY FOCUS</h3>
-                    <button id="edit-goal-btn" class="icon-subtle-btn" title="目標を編集"><i
+                    <h3><i class="fa-solid fa-bullseye accent-icon"></i> 今日目標 | DAILY FOCUS</h3>
+                    <button id="edit-goal-btn" class="icon-subtle-btn" title="編輯目標"><i
                             class="fa-solid fa-pen"></i></button>
                 </div>
                 <div class="goal-content">
-                    <p id="goal-display" class="goal-text">素晴らしいWeb体験を創造する ✨</p>
+                    <p id="goal-display" class="goal-text">創造卓越的網頁互動體驗 ✨</p>
                     <div id="goal-input-container" class="goal-input-container hidden">
-                        <input type="text" id="goal-input" class="widget-input" placeholder="本日の目標を入力...">
+                        <input type="text" id="goal-input" class="widget-input" placeholder="請輸入今日目標...">
                         <div class="widget-actions">
                             <button id="save-goal-btn" class="btn btn-small btn-primary">保存</button>
                         </div>
@@ -213,7 +213,7 @@
             <!-- Quick Access Links -->
             <div class="widget-card retro-card">
                 <div class="widget-header">
-                    <h3><i class="fa-solid fa-compass accent-icon"></i> クイックナビ | LINKS</h3>
+                    <h3><i class="fa-solid fa-compass accent-icon"></i> 快速導覽 | LINKS</h3>
                 </div>
                 <div class="quick-links">
                     <a href="https://github.com/a9110118888" target="_blank" class="link-item">
@@ -238,15 +238,15 @@
             <!-- Time Stats Widget -->
             <div class="widget-card retro-card">
                 <div class="widget-header">
-                    <h3><i class="fa-solid fa-hourglass-half accent-icon"></i> 本日の進捗 | PROGRESS</h3>
+                    <h3><i class="fa-solid fa-hourglass-half accent-icon"></i> 今日進度 | PROGRESS</h3>
                 </div>
                 <div class="progress-widget">
                     <div class="progress-bar-container">
                         <div id="day-progress-bar" class="progress-bar-fill" style="width: 44.8%;"></div>
                     </div>
                     <div class="progress-labels">
-                        <span id="day-progress-percent">44.8% 経過</span>
-                        <span id="time-remaining-text">残り 13時間15分</span>
+                        <span id="day-progress-percent">已過 44.8%</span>
+                        <span id="time-remaining-text">剩餘 13小時15分</span>
                     </div>
                 </div>
             </div>
@@ -255,7 +255,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="hanko-seal footer-seal">陳</div>
-            <p>昭和レトロ・デザイン制作 &bull; <strong>陳宏郁</strong> &bull; <span id="footer-year">2026</span></p>
+            <p>昭和復古風格設計 &bull; <strong>陳宏郁</strong> &bull; <span id="footer-year">2026</span></p>
         </footer>
     </main>
 

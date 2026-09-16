@@ -1,4 +1,4 @@
-// Japanese Retro Personal Page Interactive Engine
+// Japanese Retro Personal Page Engine (Traditional Chinese Content)
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
@@ -75,15 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 2. Live Clock & Japanese Date Engine ---
+    // --- 2. Live Clock & Traditional Chinese Date Engine ---
     function updateClock() {
         const now = new Date();
         let hours = now.getHours();
         const minutes = now.getMinutes();
         const seconds = now.getSeconds();
 
-        // Japanese Greeting based on hour
-        updateJapaneseGreeting(hours);
+        // Traditional Chinese Greeting based on hour
+        updateChineseGreeting(hours);
 
         // Formatting AM/PM & 12h
         if (!is24HourFormat) {
@@ -99,25 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
         clockMinutes.textContent = String(minutes).padStart(2, '0');
         clockSeconds.textContent = String(seconds).padStart(2, '0');
 
-        // Japanese Date Format: 2026年 9月 16日 (水)
-        const daysJP = ['日', '月', '火', '水', '木', '金', '土'];
-        const dayKanji = daysJP[now.getDay()];
-        dateText.textContent = `${now.getFullYear()}年 ${now.getMonth() + 1}月 ${now.getDate()}日 (${dayKanji})`;
+        // Traditional Chinese Date Format: 2026年 9月 16日 星期三
+        const daysTW = ['日', '一', '二', '三', '四', '五', '六'];
+        const dayStr = daysTW[now.getDay()];
+        dateText.textContent = `${now.getFullYear()}年 ${now.getMonth() + 1}月 ${now.getDate()}日 星期${dayStr}`;
 
         // Day Progress Calculation
         updateDayProgress(now);
     }
 
-    function updateJapaneseGreeting(hours) {
-        let greeting = 'こんにちは';
+    function updateChineseGreeting(hours) {
+        let greeting = '午安，歡迎回來';
         if (hours >= 5 && hours < 11) {
-            greeting = 'おはようございます';
+            greeting = '早安，歡迎回來';
         } else if (hours >= 11 && hours < 17) {
-            greeting = 'こんにちは';
+            greeting = '午安，歡迎回來';
         } else if (hours >= 17 && hours < 22) {
-            greeting = 'こんばんは';
+            greeting = '晚安，歡迎回來';
         } else {
-            greeting = 'おやすみなさい';
+            greeting = '夜深了，注意休息';
         }
         greetingText.textContent = greeting;
     }
@@ -128,12 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const percent = ((currentSeconds / totalSecondsInDay) * 100).toFixed(1);
 
         dayProgressBar.style.width = `${percent}%`;
-        dayProgressPercent.textContent = `${percent}% 経過`;
+        dayProgressPercent.textContent = `已過 ${percent}%`;
 
         const remainingSeconds = totalSecondsInDay - currentSeconds;
         const remainingHours = Math.floor(remainingSeconds / 3600);
         const remainingMins = Math.floor((remainingSeconds % 3600) / 60);
-        timeRemainingText.textContent = `残り ${remainingHours}時間${remainingMins}分`;
+        timeRemainingText.textContent = `剩餘 ${remainingHours}小時${remainingMins}分`;
     }
 
     function initTimezone() {
@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const offsetHours = Math.abs(Math.floor(offsetMinutes / 60));
             const sign = offsetMinutes <= 0 ? '+' : '-';
             const padHours = String(offsetHours).padStart(2, '0');
-            timezoneText.textContent = `東京・台北標準時 (UTC${sign}${padHours}:00)`;
+            timezoneText.textContent = `台北・東京標準時 (UTC${sign}${padHours}:00)`;
         } catch (e) {
-            timezoneText.textContent = '東京・台北標準時 (UTC+08:00)';
+            timezoneText.textContent = '台北・東京標準時 (UTC+08:00)';
         }
         footerYear.textContent = new Date().getFullYear();
     }
